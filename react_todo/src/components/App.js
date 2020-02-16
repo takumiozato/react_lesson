@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Container from '@material-ui/core/Container';
 import Form from './Form';
 import Todo from './Todo';
 import EditTodo from './EditTodo';
@@ -63,7 +64,7 @@ class App extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <Container maxWidth="sm">
         <h1>TODO APP</h1>
         {/* Form コンポーネント */}
         <Form onSubmit={this.handleSubmit} />
@@ -91,7 +92,7 @@ class App extends Component {
             );
           })}
         </ul>
-      </React.Fragment>
+      </Container>
     )
   }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '@material-ui/core/Button';
 
 class EditTodo extends React.Component {
   constructor(props) {
@@ -27,7 +28,7 @@ class EditTodo extends React.Component {
           value={this.state.text}
           onChange={this.handleChange}
         />
-        <button onClick={this.handleSubmit}>更新</button>
+        <Button variant="outlined" color="primary" size="small" onClick={this.handleSubmit}>更新</Button>
       </div>
     );
   }

@@ -1,4 +1,6 @@
 import React from 'react';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 class Form extends React.Component {
   constructor(props) {
@@ -10,7 +12,7 @@ class Form extends React.Component {
   }
 
   handleChange = e => {
-    console.log(e)
+    // console.log(e)
     this.setState({ input: e.currentTarget.value })
   };
 
@@ -18,6 +20,7 @@ class Form extends React.Component {
   handleSubmit = e => {
     e.preventDefault()
     if (!this.state.input) return;
+    this.setState({ input: e.currentTarget.value })
     this.props.onSubmit(this.state.input);
     this.setState({ input: "" });
   };
@@ -25,12 +28,13 @@ class Form extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input
-          type="text"
+        <TextField
+          id="standard-basic"
+          label="Todoを入力"
           value={this.state.input}
           onChange={this.handleChange}
         />
-        <button>追加</button>
+        <Button type="submit" variant="contained" color="primary" size="small">追加</Button>
       </form>
     );
   }

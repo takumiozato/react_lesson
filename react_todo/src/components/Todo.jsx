@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '@material-ui/core/Button';
 
 class Todo extends React.Component {
   handleClickDelete = () => {
@@ -17,8 +18,8 @@ class Todo extends React.Component {
     return (
       <React.Fragment>
         {text}
-        <button onClick={this.handleClickEdit}>編集</button>
-        <button onClick={this.handleClickDelete}>削除</button>
+        <Button variant="outlined" color="primary" size="small" onClick={this.handleClickEdit}>編集</Button>
+        <Button variant="outlined" color="secondary" size="small" onClick={this.handleClickDelete}>削除</Button>
       </React.Fragment>
     );
   }
