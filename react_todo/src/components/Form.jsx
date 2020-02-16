@@ -16,10 +16,10 @@ class Form extends React.Component {
 
   // handleSubmit メソッドを作る
   handleSubmit = e => {
-      this.props.onSubmit(this.state.input);
-      e.preventDefault()
-      if (!this.state.input) return;
-      this.setState({input: ""});   
+    e.preventDefault()
+    if (!this.state.input) return;
+    this.props.onSubmit(this.state.input);
+    this.setState({ input: "" });
   };
 
   render() {
